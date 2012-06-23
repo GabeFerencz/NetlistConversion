@@ -1,0 +1,5 @@
+At work, we have library and procurement integration support for the Mentor 
+Graphics Expedition toolchain, but our layouts are sometimes done in Pads. I 
+wrote this script to convert from an exported Allegro netlist to a netlist 
+we could import into Pads. It worked well enough for what I needed it to do, 
+but I tried to write it so it could possibly be extended in the future.

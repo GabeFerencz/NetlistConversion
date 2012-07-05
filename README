@@ -1,5 +1,16 @@
+NetlistConversion.py:
 At work, we have library and procurement integration support for the Mentor 
 Graphics Expedition toolchain, but our layouts are sometimes done in Pads. I 
 wrote this script to convert from an exported Allegro netlist to a netlist 
 we could import into Pads. It worked well enough for what I needed it to do, 
 but I tried to write it so it could possibly be extended in the future.
+
+EcoParser.py:
+After converting my netlist and importing into pads, I got back an eco error 
+file. It listed which components were missing from the library ('* Failed to 
+get '), and those that didn't match the pin names ('* Not valid pin name ').  
+Unfortunately it listed the mismatched pin names by reference designators 
+rather than by part numbers.  All I really wanted was a list of which parts 
+needed to be fixed.  This script uses NetlistConversion.py to cross reference 
+the reference designator to the part number and just spit out the parts I 
+need to fix.

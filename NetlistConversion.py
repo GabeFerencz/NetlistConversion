@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # Gabe Ferencz
 import time
+import textwrap
 
 class Netlist(object):
     def __init__(self):
@@ -74,7 +75,8 @@ class Net(object):
         return self.netName
 
     def pads_format(self):
-        return '*signal* '+self.netName + '\n' + ' '.join(self.nodes) + '\n\n'
+        return '*signal* '+self.netName + '\n' + \
+                textwrap.fill(' '.join(self.nodes),79) + '\n\n'
 
     @staticmethod
     def parse_allegro(line, parent):
